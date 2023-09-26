@@ -70,6 +70,18 @@ section{
     margin-left: 4rem;
     transition: .3s;
 }
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
 
 .navbar a:hover {
     color: #0ef;
@@ -483,6 +495,27 @@ span{
 @media (max-width:617px){
     .project-container{
         grid-template-columns: 1fr;
+    }
+    .navbar {
+        display: none; 
+    }
+
+    .navbar.close{
+        display: none;
+    }
+    .burger {
+        display: block; 
+    }
+    .burger.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
 

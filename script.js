@@ -41,3 +41,21 @@ ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .skills-container, .project-box, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+const burger = document.getElementById('burger');
+const navbarburg = document.getElementById('navbar');
+
+burger.addEventListener('click', () => {
+    navbarburg.classList.toggle('close');
+    burger.classList.toggle('open');
+});
+
+function checkWindowSize() {
+    if (window.innerWidth <= 617) {
+        navbar.classList.add('open');
+    } else {
+        navbar.classList.remove('open');
+    }
+}
+window.addEventListener('load', checkWindowSize);
+window.addEventListener('resize', checkWindowSize);
